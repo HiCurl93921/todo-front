@@ -3,7 +3,7 @@ import 'modern-css-reset'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { Box, Typography } from '@mui/material'
 import { NewTodoPayload, Todo } from './types/todo'
-import TodoFrom from './components/TodoForm'
+import TodoForm from './components/TodoForm'
 
 
 const TodoApp: FC = () => {
@@ -29,13 +29,13 @@ const TodoApp: FC = () => {
           backgroundColor: 'white',
           borderBottom: '1px solid gray',
           display: 'flex',
-          alignItems: 'cneter',
+          alignItems: 'center',
           position: 'fixed',
           top: 0,
           p: 2,
           width: '100%',
           height: 80,
-          zIndex: 3
+          zIndex: 3,
         }}
         >
           <Typography variant="h1">Todo App</Typography>
@@ -48,7 +48,7 @@ const TodoApp: FC = () => {
             mt: 10,
           }}
         >
-          <Box maxWidth={700} Width="100%">
+          <Box maxWidth={700} width="100%">
             <TodoForm onSubmit={onSubmit} />
           </Box>
         </Box>
