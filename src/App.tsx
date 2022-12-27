@@ -23,7 +23,17 @@ const TodoApp: FC = () => {
   }
 
   const onUpdate = (updateTodo: Todo) => {
-    
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === updateTodo.id) {
+          return {
+            ...todo,
+            ...updateTodo,
+          }
+        }
+        return todo
+      })
+    )
   }
 
   return (
@@ -53,7 +63,10 @@ const TodoApp: FC = () => {
           }}
         >
           <Box maxWidth={700} width="100%">
-            <TodoForm onSubmit={onSubmit} />
+            <Stack spacing={5}>
+              <TodoForm onSubmit={onSubmit} />
+              <TodoList todos={todos} onUpdate={onUpdate} />
+            </Stack>
           </Box>
         </Box>
     </>
