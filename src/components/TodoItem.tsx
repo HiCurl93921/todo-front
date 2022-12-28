@@ -36,7 +36,7 @@ const TodoItem: FC<Props> = ({ todo, onUpdate, onDelete }) => {
                 </Grid>
                 <Grid item xs={1}>
                     <Button onClick={handleDelete} color="error">
-                        delete
+                        DELETE
                     </Button>
                 </Grid>
             </Grid>
