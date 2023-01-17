@@ -6,7 +6,7 @@ import { Label, NewTodoPayload, Todo, NewLabelPayload } from './types/todo'
 import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
 import SideNav from './components/SideNav'
-import { 
+import {
   addTodoItem,
   getTodoItems,
   updateTodoItem,
@@ -115,7 +115,7 @@ const TodoApp: FC = () => {
         >
           <Box maxWidth={700} width="100%">
             <Stack spacing={5}>
-              <TodoForm onSubmit={onSubmit} />
+              <TodoForm onSubmit={onSubmit} labels={labels}/>
               <TodoList
                 todos={todos}
                 onUpdate={onUpdate}
