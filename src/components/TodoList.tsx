@@ -1,16 +1,17 @@
 import { FC } from 'react'
-import type { Todo } from '../types/todo'
+import type { Label, Todo, UpdateTodoPayload } from '../types/todo'
 import { Stack, Typography } from '@mui/material'
 import TodoItem from './TodoItem'
 
 type Props = {
     todos: Todo[]
-    onUpdate: (todo: Todo) => void
+    labels: Label[]
+    onUpdate: (todo: UpdateTodoPayload) => void
     onDelete: (id: number) => void
 }
 
-const TodoList: FC<Props> = ({ todos, onUpdate, onDelete }) => {
-    const handleCompletedCheckbox = (todo: Todo) => {
+const TodoList: FC<Props> = ({ todos, labels, onUpdate, onDelete }) => {
+    const handleCompletedCheckbox = (todo: UpdateTodoPayload) => {
         onUpdate({
             ...todo,
             completed: !todo.completed,
@@ -27,6 +28,7 @@ const TodoList: FC<Props> = ({ todos, onUpdate, onDelete }) => {
                         todo={todo}
                         onUpdate={onUpdate}
                         onDelete={onDelete}
+                        labels={labels}
                     />
                 ))}
             </Stack>
